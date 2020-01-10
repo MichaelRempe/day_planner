@@ -1,0 +1,27 @@
+.jumbotron{
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0px 10px black;
+}
+#date_display{
+    margin: 0;
+}
+#hour_display{
+    margin: 0;
+}
+
+.hourDIV{
+     text-align: center;
+}
+.hour-display{
+    margin: 1rem;
+}
+.saveDIV{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: #007bff;
+}
+.save-display{
+    height: max-content;
+}

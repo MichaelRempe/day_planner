@@ -5,17 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CDN style shees + custom styles -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/styles.css">
     <title>Day Planner</title>
 </head>
-<div id="container-fluid">
-HELLO WORLD
-</div>
+
 <!-- CDN js libraries + custom script -->
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src = https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js></script>
 <script src="script.js"></script>
+
 <body>
-    
+    <div class="jumbotron">
+        <h1 class="display">Work Day Schedule</h1>
+        <p class="lead">This is a daily planner, that allows for you to plan up to one task per hour.</p>
+        <p id="date_display"></p>
+        <p id="hour_display"></p>
+        <p id="tasks_count">You have nothing planed</p>
+    </div>
+    <!-- Container -->
+    <div id="main-container" class="container-fluid"></div>
 </body>
 </html>
