@@ -1,7 +1,5 @@
 $(document).ready(function () {
     var container = $("#main-container");
-    var count = 0;
-    var count_display = $("#task_count");
     var dateDisplay = $("#date_display");
     var hourDisplay = $("#hour_display");
     var times = ["9-AM", "10-AM", "11-AM", "12-PM", "1-PM", "2-PM", "3-PM", "4-PM", "5-PM"];
