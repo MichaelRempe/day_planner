@@ -5,6 +5,11 @@ $(document).ready(function () {
     var dateDisplay = $("#date_display");
     var hourDisplay = $("#hour_display");
     var times = ["9-AM", "10-AM", "11-AM", "12-PM", "1-PM", "2-PM", "3-PM", "4-PM", "5-PM"];
+    var hours = [ "9", "10", "11", "12", "13", "14", "15", "16", "17"];
+    var current_hour;
+
+
+   
 
     
     
@@ -29,11 +34,11 @@ $(document).ready(function () {
             var save_div = $("<div>");
             //collum attributes
             time_div.attr("class", "col-sm-2 col-md-2 col-lg-2 hourDIV");
-            time_div.attr("data-col", times[i] + " hourCOL")
-            text_div.attr("class", "col-sm-8 col-md-8 col-lg-8 textDIV")
-            text_div.attr("data-col", times[i] + " textCOL")
+            time_div.attr("data-col", hours[i]);
+            text_div.attr("class", "col-sm-8 col-md-8 col-lg-8 textDIV");
+            text_div.attr("data-col", hours[i]);
             save_div.attr("class", "col-sm-2 col-md-2 col-lg-2 saveDIV");
-            save_div.attr("data-col", times[i] + " saveCOL")
+            save_div.attr("data-col", times[i] + " saveCOL");
             // append cols to row
             hour_div.append(time_div);
             hour_div.append(text_div);
@@ -45,10 +50,10 @@ $(document).ready(function () {
             var save_button = $("<button>");
             //children attributes
             time_para
-                .attr("data-container", times[i])
+                .attr("data-container", hours[i])
                 .attr("class", "hour-display")
                 .text(times[i]);
-            text_area.attr("data-container", times[i]);
+            text_area.attr("data-container", hours[i]);
             text_area.attr("id", times[i]);
             text_area.attr("placeholder", "Enter task and click save!");
             text_area.attr("class", "form-control text-display");
@@ -79,11 +84,34 @@ $(document).ready(function () {
         var task = $("#"+hour).val();
         localStorage.setItem(hour, task);
     }
+    function setBGColor(){
+        var color_containers = document.getElementsByClassName("hourDIV");
+        for(var i=0; i<color_containers.length; i++){
+            var container_data =  color_containers[i].getAttribute("data-col");
+            if(container_data == current_hour){
+                color_containers[i].style.backgroundColor ="rgb(0,128,0,.2)";
+                console.log(container_data);
+                console.log(color_containers[i].style.backgroundColor);
+            }
+            if(container_data > current_hour){
+                color_containers[i].style.backgroundColor ="rgb(192,192,192,.4)";
+                console.log(container_data);
+                console.log(color_containers[i].style.backgroundColor);
+            }
+            if(container_data < current_hour){
+                color_containers[i].style.backgroundColor ="rgba(255,0,0,.4)";
+                console.log(container_data);
+                console.log(color_containers[i].style.backgroundColor);
+            }
+            
+        }
+    }
     function display_time(){
         setInterval(function(){
-            console.log(moment().format( 'LTS'));
             dateDisplay.text(moment().format('MMMM Do YYYY'));
             hourDisplay.text(moment().format( 'LTS'));
+            current_hour = moment().format('H');
+            setBGColor()
         }, 1000)
     }
 
