@@ -28,6 +28,9 @@
     height:5rem;
     margin: 0;
     padding: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
   
 }
 .text-display{
@@ -42,11 +45,13 @@
     display: flex;
     align-items: center;
     background-color: #007bff;
+    opacity:.8 ; 
     margin: 0;
     padding: 0;
     
     
 }
-.save-display{
-    height: max-content;
+.save-display{ 
+    padding: 0;
+    margin: 0;
 }

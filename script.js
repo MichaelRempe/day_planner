@@ -86,24 +86,22 @@ $(document).ready(function () {
     }
     function setBGColor(){
         var color_containers = document.getElementsByClassName("hourDIV");
+        var color_containers2 = document.getElementsByClassName("textDIV");
         for(var i=0; i<color_containers.length; i++){
             var container_data =  color_containers[i].getAttribute("data-col");
             container_data= parseInt(container_data);
             current_hour = parseInt(current_hour);
             if(container_data > current_hour){
                 color_containers[i].style.backgroundColor ="rgb(192,192,192,.4)";
-                console.log(container_data);
-                console.log(color_containers[i].style.backgroundColor);
+                color_containers2[i].style.backgroundColor ="rgb(192,192,192,.4)";
             }
             if(container_data < current_hour){
                 color_containers[i].style.backgroundColor ="rgba(255,0,0,.4)";
-                console.log(container_data);
-                console.log(color_containers[i].style.backgroundColor);
+                color_containers2[i].style.backgroundColor ="rgba(255,0,0,.4)";
             }
             if(container_data == current_hour){
                 color_containers[i].style.backgroundColor ="rgb(0,128,0,.2)";
-                console.log(container_data);
-                console.log(color_containers[i].style.backgroundColor);
+                color_containers2[i].style.backgroundColor ="rgb(0,128,0,.2)";
             }
             
         }
