@@ -3,6 +3,7 @@
     padding: 1rem;
     box-shadow: 0px 10px black;
 }
+/* jumbotron children */
 #date_display{
     margin: 0;
 }
@@ -10,17 +11,41 @@
     margin: 0;
 }
 
+.row{
+    height: 5rem;
+}
 .hourDIV{
-     text-align: center;
+    height:5rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+   
 }
 .hour-display{
     margin: 1rem;
 }
+.textDIV{
+    height:5rem;
+    margin: 0;
+    padding: 0;
+  
+}
+.text-display{
+    height:5rem;
+    margin: 0;
+    
+}
+
 .saveDIV{
+    height:5rem;
     text-align: center;
     display: flex;
     align-items: center;
     background-color: #007bff;
+    margin: 0;
+    padding: 0;
+    
+    
 }
 .save-display{
     height: max-content;

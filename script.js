@@ -88,11 +88,8 @@ $(document).ready(function () {
         var color_containers = document.getElementsByClassName("hourDIV");
         for(var i=0; i<color_containers.length; i++){
             var container_data =  color_containers[i].getAttribute("data-col");
-            if(container_data == current_hour){
-                color_containers[i].style.backgroundColor ="rgb(0,128,0,.2)";
-                console.log(container_data);
-                console.log(color_containers[i].style.backgroundColor);
-            }
+            container_data= parseInt(container_data);
+            current_hour = parseInt(current_hour);
             if(container_data > current_hour){
                 color_containers[i].style.backgroundColor ="rgb(192,192,192,.4)";
                 console.log(container_data);
@@ -100,6 +97,11 @@ $(document).ready(function () {
             }
             if(container_data < current_hour){
                 color_containers[i].style.backgroundColor ="rgba(255,0,0,.4)";
+                console.log(container_data);
+                console.log(color_containers[i].style.backgroundColor);
+            }
+            if(container_data == current_hour){
+                color_containers[i].style.backgroundColor ="rgb(0,128,0,.2)";
                 console.log(container_data);
                 console.log(color_containers[i].style.backgroundColor);
             }
