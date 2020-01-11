@@ -24,18 +24,18 @@ $(document).ready(function () {
             var hour_div = $("<div>");
             //Row attributes
             hour_div.attr("class", "row");
-            hour_div.attr("data-row", times[i]);
+            hour_div.attr("data-row", hours[i]);
 
             //create col for each planner element
             var time_div = $("<div>");
             var text_div = $("<div>");
             var save_div = $("<div>");
             //collum attributes
-            time_div.attr("class", "col-sm-2 col-md-2 col-lg-2 hourDIV");
+            time_div.attr("class", "col-xs-2 col-sm-2 col-md-2 col-lg-2 hourDIV");
             time_div.attr("data-col", hours[i]);
-            text_div.attr("class", "col-sm-8 col-md-8 col-lg-8 textDIV");
+            text_div.attr("class", "col-xs-8 col-sm-8 col-md-8 col-lg-8 textDIV");
             text_div.attr("data-col", hours[i]);
-            save_div.attr("class", "col-sm-2 col-md-2 col-lg-2 saveDIV");
+            save_div.attr("class", "col-xs-2 col-sm-2 col-md-2 col-lg-2 saveDIV");
             save_div.attr("data-col", times[i] + " saveCOL");
             // append cols to row
             hour_div.append(time_div);
@@ -83,23 +83,26 @@ $(document).ready(function () {
         localStorage.setItem(hour, task);
     }
     function setBGColor(){
-        var color_containers = document.getElementsByClassName("hourDIV");
-        var color_containers2 = document.getElementsByClassName("textDIV");
-        for(var i=0; i<color_containers.length; i++){
-            var container_data =  color_containers[i].getAttribute("data-col");
+        //Select all DOM rows and place them in an array
+        var container_row = document.getElementsByClassName("row");
+        for(var i=0; i<container_row.length; i++){
+            //compare row's data attribue (military time integer) to current hour
+            var container_data = container_row[i].getAttribute("data-row");
             container_data= parseInt(container_data);
             current_hour = parseInt(current_hour);
+            // hour row data > current hour = grey 
             if(container_data > current_hour){
-                color_containers[i].style.backgroundColor ="rgb(192,192,192,.4)";
-                color_containers2[i].style.backgroundColor ="rgb(192,192,192,.4)";
+                container_row[i].style.backgroundColor ="rgb(192,192,192,.5)";
             }
+            //hour row data < current hour = red
             if(container_data < current_hour){
-                color_containers[i].style.backgroundColor ="rgba(255,0,0,.4)";
-                color_containers2[i].style.backgroundColor ="rgba(255,0,0,.4)";
+                container_row[i].style.backgroundColor ="rgba(255,0,0,.5)";
+                
             }
+            //hour row data == current hour = green
             if(container_data == current_hour){
-                color_containers[i].style.backgroundColor ="rgb(0,128,0,.2)";
-                color_containers2[i].style.backgroundColor ="rgb(0,128,0,.2)";
+                container_row[i].style.backgroundColor ="rgb(0,128,0,.5)";
+                
             }
             
         }

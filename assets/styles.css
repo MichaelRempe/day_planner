@@ -10,21 +10,30 @@
 }
 #hour_display{
     margin: 0;
+    font-size: 3rem;
 }
-
+/* container children */
 .row{
     height: 5rem;
+    border: 1px solid black;
+    border-radius: 10px;
 }
+/* div container and child paragraph containing static time block */
 .hourDIV{
     height:5rem;
     text-align: center;
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
    
 }
 .hour-display{
-    margin: 1rem;
+    margin:2rem;
+    color: white;
+    font-size: 1.5rem;
 }
+/* div container and child text area capturing user input */
 .textDIV{
     height:5rem;
     margin: 0;
@@ -32,27 +41,57 @@
     text-align: center;
     display: flex;
     align-items: center;
-  
 }
 .text-display{
     height:5rem;
-    margin: 0;
-    
+    margin: 0; 
 }
-
+/* div container and child button capture click event */
 .saveDIV{
     height:5rem;
     text-align: center;
     display: flex;
     align-items: center;
-    background-color: #007bff;
-    opacity:.8 ; 
+    /* background-color: #007bff; */
     margin: 0;
     padding: 0;
-    
-    
+    color: white;  
 }
 .save-display{ 
     padding: 0;
     margin: 0;
+ 
+}
+/* this was needed to mess with button height? The height attribue was not being applied via the classes all the buttons shared */
+button{
+    height: 75%;
+}
+/* I played witht the pixel responsiveness and did some reading I belive this is the breakpoint i need to resize my cols to avoid overlap */
+@media(max-width:580px){
+/* container children */
+.row{
+    height: 5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+/* div container and child paragraph containing static time block */
+.hourDIV{
+  /* unsure how to rezise for smaller sizes yet (saturday) */
+}
+.hour-display{
+
+}
+/* div container and child text area capturing user input */
+.textDIV{
+    /* unsure how to rezise for smaller sizes yet (saturday) */
+}
+.text-display{
+}
+/* div container and child button capture click event */
+.saveDIV{
+    /* unsure how to rezise for smaller sizes yet (saturday) */
+}
+.save-display{ 
+ 
+}
 }
